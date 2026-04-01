@@ -1,0 +1,56 @@
+.form-title {
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.error-msg {
+  color: var(--danger) !important;
+  font-size: 13px !important;
+  margin-top: 12px !important;
+  text-align: center;
+}
+
+.redirect-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.redirect-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.redirect-link:hover {
+  color: #818cf8;
+}
+
+.success-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 50px;
+  margin-bottom: 16px;
+}
+
+.success-box h2 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.success-box p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}

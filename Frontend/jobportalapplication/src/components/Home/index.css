@@ -1,0 +1,65 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px); /* Adjust for header */
+  padding: 0 10%;
+  background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+              url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png') no-repeat center center/cover;
+}
+
+@media screen and (min-width: 768px) {
+  .home-container {
+    background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png') no-repeat center center/cover;
+  }
+}
+
+.home-container h1 {
+  font-size: 48px;
+  font-weight: 700;
+  max-width: 600px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.home-container p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.find-jobs-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+}
+
+.find-jobs-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
