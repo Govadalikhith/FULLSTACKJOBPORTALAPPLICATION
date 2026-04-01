@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import {Link, Navigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
+import API_URL from '../../apiUrl'
 import './index.css'
 
 class Login extends Component {
@@ -19,7 +20,7 @@ class Login extends Component {
     this.setState({isLoading: true, isError: false})
 
     try {
-      const response = await fetch('http://localhost:5000/auth/login', {
+      const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password}),
@@ -35,7 +36,7 @@ class Login extends Component {
     } catch (err) {
       this.setState({
         isError: true,
-        errorMsg: 'Cannot connect to server. Make sure backend is running on port 5000!',
+        errorMsg: 'Cannot connect to server. Please try again later.',
         isLoading: false,
       })
     }

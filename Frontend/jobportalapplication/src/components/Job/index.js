@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {ThreeDots} from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import Header from '../Header'
+import API_URL from '../../apiUrl'
 import './index.css'
 
 const employmentTypesList = [
@@ -36,7 +37,7 @@ class Jobs extends Component {
     const {searchInput, employmentType, salaryRange} = this.state
     const jwtToken = Cookies.get('jwt_token')
     const employmentQuery = employmentType.join(',')
-    const url = `http://localhost:5000/api/jobs?employment_type=${employmentQuery}&minimum_package=${salaryRange}&search=${searchInput}`
+    const url = `${API_URL}/api/jobs?employment_type=${employmentQuery}&minimum_package=${salaryRange}&search=${searchInput}`
 
     try {
       const response = await fetch(url, {
@@ -84,7 +85,7 @@ class Jobs extends Component {
     <div className="failure-view">
       <img src="https://assets.ccbp.in/frontend/react-js/failure-img.png" alt="failure view" className="failure-img" />
       <h1>Oops! Something Went Wrong</h1>
-      <p>Make sure your backend server is running on port 5000.</p>
+      <p>Could not load jobs. Please check your connection.</p>
       <button type="button" className="retry-btn" onClick={this.getJobs}>Retry</button>
     </div>
   )

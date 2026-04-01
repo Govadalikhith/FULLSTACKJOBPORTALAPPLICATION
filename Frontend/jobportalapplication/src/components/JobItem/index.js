@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom'
 import {ThreeDots} from 'react-loader-spinner'
 import Cookies from 'js-cookie'
 import Header from '../Header'
+import API_URL from '../../apiUrl'
 import './index.css'
 
 // Wrapper to inject URL params into class component (React Router v6 style)
@@ -29,7 +30,7 @@ class JobItem extends Component {
     const {id} = this.props.params
 
     try {
-      const response = await fetch(`http://localhost:5000/api/jobs/${id}`, {
+      const response = await fetch(`${API_URL}/api/jobs/${id}`, {
         headers: {Authorization: `Bearer ${jwtToken}`},
       })
 
@@ -64,7 +65,7 @@ class JobItem extends Component {
         {isError && (
           <div className="failure-view">
             <h1>Oops! Something Went Wrong</h1>
-            <p>Make sure your backend server is running on port 5000.</p>
+            <p>Could not load job details. Please check your connection.</p>
             <button type="button" className="retry-btn" onClick={this.getJobItem}>Retry</button>
           </div>
         )}
