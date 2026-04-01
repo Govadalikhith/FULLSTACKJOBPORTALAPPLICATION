@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: job-portal-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    rootDir: Backend
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://your-netlify-domain.netlify.app
